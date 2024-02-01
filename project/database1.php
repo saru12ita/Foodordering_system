@@ -1,6 +1,6 @@
 <?php
 // Establishing a connection to the MySQL database
-$con = mysqli_connect("localhost", "root", "", "foodorder") or die(mysqli_error($con));
+$con = mysqli_connect("localhost", "root", "", "webfood") or die(mysqli_error($con));
 function InsertLocation($firstname, $lastname, $gender, $email, $password) {
     global $conn; // Access the global database connection variable
 

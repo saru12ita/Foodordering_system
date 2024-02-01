@@ -23,7 +23,7 @@
             <div class="menu text-right">
                 <ul>
                     <li>
-                        <a href="index.php">Home</a>
+                        <a href="index1.php">Home</a>
                     </li>
                     <li>
                         <a href="categories.php">Categories</a>
@@ -64,7 +64,7 @@
                     </p>
                     <br>
 
-                    <a href="order.php" class="btn btn-primary">Order Now</a>
+                    <a href="admin.php" class="btn btn-primary">Order Now</a>
                 </div>
             </div>
 
@@ -80,8 +80,7 @@
                         Made with Italian Sauce, Chicken, and organice vegetables.
                     </p>
                     <br>
-
-                    <a href="order.php" class="btn btn-primary">Order Now</a>
+                    <a href="admin.php" class="btn btn-primary">Order Now</a>
                 </div>
             </div>
 
@@ -98,7 +97,7 @@
                     </p>
                     <br>
 
-                    <a href="order.php" class="btn btn-primary">Order Now</a>
+                    <a href="admin.php" class="btn btn-primary">Order Now</a>
                 </div>
             </div>
 
@@ -114,7 +113,7 @@
                         Made with Italian Sauce, Chicken, and organice vegetables.
                     </p>
                     <br>
-                    <a href="order.php" class="btn btn-primary">Order Now</a>
+                    <a href="admin.php" class="btn btn-primary">Order Now</a>
                 </div>
             </div>
 
@@ -130,7 +129,7 @@
                         Made with Italian Sauce, Chicken, and organice vegetables.
                     </p>
                     <br>
-                    <a href="order.php" class="btn btn-primary">Order Now</a>
+                    <a href="admin.php" class="btn btn-primary">Order Now</a>
           </div>
             </div>
 
@@ -146,7 +145,7 @@
                         Made with Italian Sauce, Chicken, and organice vegetables.
                     </p>
                     <br>
-                    <a href="order.php" class="btn btn-primary">Order Now</a>
+                    <a href="admin.php" class="btn btn-primary">Order Now</a>
 
                 </div>
             </div>
@@ -178,7 +177,8 @@
 
     <section class="footer">
         <div class="container text-center">
-            <p>All rights reserved. Designed By <a href="#">Sarita B.K.</a></p>
+            <p>All rights reserved. Designed By <a href="https://www.facebook.com/saritabk" target="_blank">Sarita BK</a>
+</p>
         </div>
     </section>
 

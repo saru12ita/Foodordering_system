@@ -39,132 +39,154 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <head>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* CSS for Contact Form */
+       /* General Styles */
 
-body {
+       body {
     font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
+    background-image: url('anion.jpg');
+    background-size: cover;
+    background-position: center;
     margin: 0;
+    padding: 0;
+    position: relative; /* Ensure that the ::before pseudo-element is positioned relative to the body */
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the last value (0.5) for the desired level of transparency */
 }
 
 .container {
-    width: 80%;
+    width: 60%;
+    margin: 0 auto;
+    position: relative; /* Ensure that the container is positioned relative to the body */
+    z-index: 1; /* Ensure that the container appears above the pseudo-element */
+}
+
+/* Rest of your existing styles... */
+
+
+.container {
+    width: 60%;
     margin: 0 auto;
 }
 
-.navbar {
-    background-color: #333;
-    padding: 10px 0;
-    color: white;
-}
 
-.logo img {
-    max-width: 100%;
-    height: auto;
-}
+h2.text-center {
+            color: orange; /* Set the color to yellow */
+            font-weight: bold; /* Make it bold */
+            font-size: 24px; /* Adjust the font size */
+            font-family: 'Arial', sans-serif; /* Specify the font family */
+            cursor: pointer;
+        }
 
-.menu ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
 
-.menu ul li {
-    display: inline-block;
-    margin-right: 20px;
-}
 
-.menu a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-}
 
-.menu a:hover {
-    color: #ff4757;
-}
 
-.contact {
-    background-color: #f5f5f5;
-    padding: 4% 0;
-}
 
-.contact h2 {
-    color: #333;
-    text-align: center;
-}
 
-.contact-form {
-    width: 50%;
-    margin: 0 auto;
-    background-color: white;
+
+
+
+
+
+
+/*
+form {
+    background-color: #ffffff;
+    max-width: 400px;
+    margin: 35px auto;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px rgba(0.75, 1, 0, 0.75);
+    border-radius: 4px;
+}
+*/
+.signup-text {
+            color:purple ;
+            text-align: center;
+            font-size: 27px;
+            font-family: 'Times New Roman', Times, serif;
+            margin-top: -55px; /* Adjust this value to vertically center the text */
+        }
+
+
+
+form {
+    background-color: #ffffff;
+    max-width: 300px; /* Adjust the max-width to your preference */
+    margin: 35px auto;
+    padding: 14px;
+    box-shadow: 0 0 20px rgba(0.75, 1, 0, 0.75);
+    border-radius: 4px;
 }
 
-.contact-form label {
+label {
     display: block;
-    margin-bottom: 1%;
-    font-weight: bold;
-    color: #555;
+    margin-bottom: 8px;
 }
 
-.contact-form input,
-.contact-form textarea {
+input {
     width: 100%;
     padding: 10px;
-    margin-bottom: 3%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    margin-bottom: 10px;
     box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-.contact-form button {
-    padding: 10px;
-    background-color: #ff6b81;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.contact-form button:hover {
-    background-color: #ff4757;
-}
-
-.response-message {
-    margin-top: 1%;
-    padding: 10px;
-    border-radius: 5px;
-    display: none;
-}
-
-.success {
+#submitButton {
     background-color: #4caf50;
-    color: white;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-.error {
-    background-color: #f44336;
-    color: white;
+#submitButton:hover {
+    background-color:purple;
 }
 
-.social ul {
+.social {
+    background-color: #232323;
+    color: #fff;
+    padding: 20px 0;
+    margin: 0px;
+}
+
+ul {
     list-style: none;
     padding: 0;
 }
 
-.social ul li {
+ul li {
     display: inline-block;
     margin-right: 10px;
 }
 
-.social a img {
-    max-width: 40px;
-    height: auto;
+a {
+    text-decoration: none;
 }
+
+a img {
+    width: 25px;
+    height: 25px;
+}
+.text-center {
+    text-align: center;
+}
+
+
+
+
+
+
 
     </style>
 
@@ -199,7 +221,32 @@ body {
     if (!email.match(emailRegex)) {
         alert("Please enter a valid Email address.");
         return false;
-    }
+    }// Email validation: Basic email format
+var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+if (!email.match(emailRegex)) {
+    alert("Please enter a valid Email address.");
+    return false;
+}
+
+// Check if the email is unique
+if (!isEmailUnique(email)) {
+    alert("This email address is already in use. Please use a different email.");
+    return false;
+}
+
+// Continue with your logic if the email is both valid and unique
+// ...
+
+// Sample function to check email uniqueness (replace this with your actual logic)
+function isEmailUnique(email) {
+    // You would typically make an AJAX request or use server-side logic to check email uniqueness
+    // For this example, we assume an array of existing emails
+    var existingEmails = ["existing@example.com", "another@example.com", /*...*/];
+
+    // Check if the email is in the existing emails array
+    return !existingEmails.includes(email);
+}
+
 
     // Password validation: Minimum eight characters
     if (password.length < 8) {
@@ -227,7 +274,7 @@ body {
             <div class="menu text-right">
                 <ul>
                     <li>
-                        <a href="index.php">Home</a>
+                        <a href="index1.php">Home</a>
                     </li>
                     <li>
                         <a href="categories.php">Categories</a>
@@ -247,12 +294,12 @@ body {
     </section>
     <section class="contact">
         <div class="container">
-            <h2 class="text-center">Contact Us</h2>
+            <h2 class="text-center">Register</h2>
 
             <div id="Register">
             <form method="POST" onsubmit="return validateForm()">
-    Signup Form<br><br>
-
+    <br><br>
+    <div class="signup-text">Signup</div>
     <label for="FirstName">Firstname
     <input type="text" id="FirstName" placeholder="Firstname" name="firstname"><br><br>
 </label>

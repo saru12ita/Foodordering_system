@@ -23,7 +23,7 @@
             <div class="menu text-right">
                 <ul>
                     <li>
-                        <a href="index.php">Home</a>
+                        <a href="index1.php">Home</a>
                     </li>
                     <li>
                         <a href="categories.php">Categories</a>
@@ -200,7 +200,7 @@
     <!-- footer Section Starts Here -->
     <section class="footer">
         <div class="container text-center">
-            <p>All rights reserved. Designed By <a href="#">Sarita B.K.</a></p>
+            <p>All rights reserved. Designed By <a href="https://www.facebook.com/" target="_blank">Sarita B.K.</a></p>
         </div>
     </section>
     <!-- footer Section Ends Here -->
